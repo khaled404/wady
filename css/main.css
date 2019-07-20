@@ -80,8 +80,6 @@ body {
         margin-top: -5px;
         -webkit-transition: all .5s;
         transition: all .5s; }
-        .top-nav .top-container .options .lang:hover {
-          color: #2b70d7; }
         @media (max-width: 991px) {
           .top-nav .top-container .options .lang {
             display: none; } }
@@ -93,8 +91,6 @@ body {
         text-decoration: none;
         -webkit-transition: all .5s;
         transition: all .5s; }
-        .top-nav .top-container .options .sign .in:hover, .top-nav .top-container .options .sign .up:hover {
-          color: #2b70d7; }
       .top-nav .top-container .options .sign .up {
         margin-right: 5px; }
       .top-nav .top-container .options .sign .in i {
@@ -107,8 +103,6 @@ body {
         text-decoration: none;
         -webkit-transition: all .5s;
         transition: all .5s; }
-        .top-nav .top-container .options .heart:hover {
-          color: #f70708; }
       .top-nav .top-container .options .cart {
         position: relative;
         font-size: 18px;
@@ -779,7 +773,7 @@ body {
   @media (max-width: 991px) {
     .product-container .owl-dots {
       position: absolute;
-      bottom: 0;
+      bottom: -30px;
       left: 50%;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%); }
@@ -1154,8 +1148,6 @@ footer {
     transition: .5s; }
     .copyright .copyright-content .cop a img {
       margin-right: 6px; }
-    .copyright .copyright-content .cop a:hover {
-      color: #2b70d7; }
   .copyright .copyright-content .payment img {
     display: block;
     max-width: 100%;
