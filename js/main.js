@@ -9,21 +9,18 @@ $(function(){
         $(".drop > span , .drop> i").on('click',function () {
             $('.sub-menu').slideToggle();
             $('.drop> i').toggleClass('rotate');
-            $('.drop > span , .drop i').toggleClass('active');
+            $('.drop > span , .drop > i').toggleClass('active');
         })
 
         $('.subCon a').on('click',function (){
             $(this).parent().find('.sub').slideToggle();
             $(this).parent().siblings().find('.sub').slideUp();
-            $(this).find('.fa-chevron-left').toggleClass('rotate');
-            $(this).parent().siblings().find('.fa-chevron-left').removeClass('rotate');
+            $(this).find('i.fa-chevron-left ,i.fa-chevron-right').toggleClass('rotate');
+            $(this).parent().siblings().find('.fa-chevron-left ,i.fa-chevron-right').removeClass('rotate');
         })
-        //nav collapse
-        $(".footer-nav h3").on('click',function () {
-            $(this).parent().find('ul').slideToggle();
+        //footer collapse
+        $(".footer-colapse").on('click',function () {
             $(this).find('i').toggleClass('open');
-            $(this).parent().parent().siblings().find('ul').slideUp();
-            $(this).parent().parent().siblings().find('i').removeClass('open');
         })
 
     }
@@ -61,5 +58,9 @@ $(function(){
         },
         navText: ["<span></span>","<span></span>"]
     });
+    if($(window).width() <= 992){
+        $(".footer-colapse").attr("data-toggle", "collapse");
+        $(".footer-nav ul").attr("class", "collapse");
+    }
 
 });
