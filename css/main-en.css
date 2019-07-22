@@ -875,6 +875,10 @@ body {
 /* baner */
 .baner-container {
   margin: 30px 0; }
+  @media (max-width: 991px) {
+    .baner-container {
+      padding: 0;
+      margin: 30px 0 0; } }
   .baner-container .baner-img {
     overflow: hidden;
     position: relative; }
