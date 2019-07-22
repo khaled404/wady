@@ -240,17 +240,35 @@ body {
       display: -ms-flexbox;
       display: flex; } }
 
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .5s;
+  transition: all .5s; }
+  .overlay.active {
+    opacity: 1;
+    visibility: visible; }
+
 .nav-link {
   background-color: #595959; }
   @media (max-width: 991px) {
     .nav-link {
+      background-color: #fff;
       position: fixed;
       top: 0;
       left: -100%;
       height: 100%;
       width: 290px;
       z-index: 999;
-      overflow: auto;
+      overflow-Y: auto;
+      overflow-x: hidden;
       -webkit-transition: .5s;
       transition: .5s; }
       .nav-link.open {
@@ -299,7 +317,8 @@ body {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            overflow: auto; } }
+            overflow-Y: auto;
+            overflow-x: hidden; } }
         .nav-link .nav-container .main-ul .side-nav .close-nav {
           font-size: 25px;
           color: #c5c5c5;
@@ -326,7 +345,7 @@ body {
                 -ms-flex-order: 2;
                     order: 2; }
             .nav-link .nav-container .main-ul > li:not(:last-child) {
-              border-bottom: 1px solid #a6a6a6; }
+              border-bottom: 1px solid #ededed; }
             .nav-link .nav-container .main-ul > li:nth-child(3) {
               -webkit-box-ordinal-group: 1;
                   -ms-flex-order: 0;
@@ -368,24 +387,26 @@ body {
                     flex-direction: column;
             -webkit-transition: all .5s;
             transition: all .5s;
-            overflow: auto; }
+            overflow-Y: auto;
+            overflow-x: hidden; }
             .nav-link .nav-container .main-ul .drop .active {
-              color: #fff; } }
+              color: #2b70d7; } }
         .nav-link .nav-container .main-ul .drop > span {
           font-size: 15px;
           color: #f0f0f0;
           font-weight: bold;
           font-family: "frtBold",sans-serif;
-          margin-right: auto;
           margin-left: 10px;
           -webkit-transition: all .5s;
           transition: all .5s; }
           @media (max-width: 991px) {
             .nav-link .nav-container .main-ul .drop > span {
-              color: #c5c5c5;
+              color: #595959;
               margin-left: 50px;
               width: 100%;
-              margin-right: 0; } }
+              margin-right: 0;
+              overflow-Y: auto;
+              overflow-x: hidden; } }
         .nav-link .nav-container .main-ul .drop > i {
           font-size: 14px;
           -webkit-transition: all .5s;
@@ -393,7 +414,7 @@ body {
           color: #f0f0f0; }
           @media (max-width: 991px) {
             .nav-link .nav-container .main-ul .drop > i {
-              color: #c5c5c5;
+              color: #595959;
               position: absolute;
               top: 15px; }
               .nav-link .nav-container .main-ul .drop > i.fa-bars {
@@ -439,7 +460,7 @@ body {
               opacity: 1;
               visibility: visible;
               position: static;
-              background-color: #595959;
+              background-color: #fff;
               display: none;
               overflow: auto;
               -webkit-transition: unset;
@@ -457,12 +478,12 @@ body {
               .nav-link .nav-container .main-ul .drop .sub-menu > li {
                 padding: 10px; }
                 .nav-link .nav-container .main-ul .drop .sub-menu > li span, .nav-link .nav-container .main-ul .drop .sub-menu > li i {
-                  color: #c5c5c5; } }
+                  color: #595959; } }
             .nav-link .nav-container .main-ul .drop .sub-menu > li:not(:last-child) {
               border-bottom: 1px solid #ededed; }
               @media (max-width: 991px) {
                 .nav-link .nav-container .main-ul .drop .sub-menu > li:not(:last-child) {
-                  border-bottom: 1px solid #a6a6a6; } }
+                  border-bottom: 1px solid #ededed; } }
             .nav-link .nav-container .main-ul .drop .sub-menu > li:hover span, .nav-link .nav-container .main-ul .drop .sub-menu > li:hover i {
               color: #2b70d7; }
             @media (min-width: 992px) {
@@ -528,7 +549,7 @@ body {
               opacity: 1;
               visibility: visible;
               position: static;
-              background-color: #595959;
+              background-color: #fff;
               overflow: auto;
               display: none;
               -webkit-transition: unset;
@@ -539,7 +560,7 @@ body {
             border-bottom: 1px solid #ededed; }
             @media (max-width: 991px) {
               .nav-link .nav-container .main-ul .drop .sub li:not(:last-child) {
-                border-bottom: 0.5px solid #a6a6a6; } }
+                border-bottom: 1px solid #ededed; } }
           .nav-link .nav-container .main-ul .drop .sub li a {
             padding: 6px;
             margin-right: 10px;
@@ -550,7 +571,7 @@ body {
             transition: .5s; }
             @media (max-width: 991px) {
               .nav-link .nav-container .main-ul .drop .sub li a {
-                color: #c5c5c5;
+                color: #595959;
                 margin-right: 0;
                 padding: 10px; } }
             .nav-link .nav-container .main-ul .drop .sub li a:hover {
@@ -571,12 +592,18 @@ body {
         transition: .5s; }
         @media (max-width: 991px) {
           .nav-link .nav-container .main-ul .link {
+            color: #595959; } }
+        @media (max-width: 991px) {
+          .nav-link .nav-container .main-ul .link {
             padding: 11px 0;
             margin-left: 0; } }
         .nav-link .nav-container .main-ul .link:hover {
           color: #fff; }
         .nav-link .nav-container .main-ul .link.active {
           color: #fff; }
+          @media (max-width: 991px) {
+            .nav-link .nav-container .main-ul .link.active {
+              color: #595959; } }
         .nav-link .nav-container .main-ul .link i {
           font-size: 14px;
           margin-right: 10px; }

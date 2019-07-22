@@ -1,19 +1,22 @@
 $(function(){
     if($(window).width() < 992){
         //nav collapse
-        $('.nav-collapse ,.close-nav ').on('click',function () {
+        $('.nav-collapse ,.close-nav , .overlay').on('click',function () {
             $('body').toggleClass('over')
             $('.nav-link').toggleClass('open')
+            $('.overlay').toggleClass('active')
+            $('.nav-collapse').stop().fadeToggle()
+            
         });
 
         $(".drop > span , .drop> i").on('click',function () {
-            $('.sub-menu').slideToggle();
+            $('.sub-menu').stop().slideToggle();
             $('.drop> i').toggleClass('rotate');
             $('.drop > span , .drop > i').toggleClass('active');
         })
 
         $('.subCon a').on('click',function (){
-            $(this).parent().find('.sub').slideToggle();
+            $(this).parent().find('.sub').stop().slideToggle();
             $(this).parent().siblings().find('.sub').slideUp();
             $(this).find('i.fa-chevron-left ,i.fa-chevron-right').toggleClass('rotate');
             $(this).parent().siblings().find('.fa-chevron-left ,i.fa-chevron-right').removeClass('rotate');
