@@ -300,11 +300,6 @@ body {
             display: -ms-flexbox;
             display: flex;
             overflow: auto; } }
-        .nav-link .nav-container .main-ul .side-nav .lang a {
-          text-decoration: none;
-          color: #c5c5c5; }
-        .nav-link .nav-container .main-ul .side-nav .lang img {
-          margin-right: 10px; }
         .nav-link .nav-container .main-ul .side-nav .close-nav {
           font-size: 25px;
           color: #c5c5c5;
@@ -689,6 +684,9 @@ body {
 /*start product*/
 .product-container {
   padding: 45px 0 10px; }
+  @media (max-width: 991px) {
+    .product-container {
+      padding: 30px 0 10px; } }
   .product-container .product-titel {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -703,6 +701,10 @@ body {
       color: #595959;
       margin-bottom: 0;
       margin-right: 30px; }
+      @media (max-width: 425px) {
+        .product-container .product-titel p {
+          font-size: 18px;
+          margin-right: auto; } }
     .product-container .product-titel a {
       font-size: 16px;
       font-family: "frt";
@@ -883,8 +885,8 @@ body {
     overflow: hidden;
     position: relative; }
     @media (max-width: 991px) {
-      .baner-container .baner-img:first-child {
-        margin-bottom: 30px; } }
+      .baner-container .baner-img {
+        margin-bottom: 15px; } }
     .baner-container .baner-img img {
       -webkit-transition: all .5s;
       transition: all .5s;
@@ -1131,14 +1133,17 @@ footer {
   .copyright .copyright-content .cop p {
     font-size: 12px;
     color: #898989; }
-  .copyright .copyright-content .cop a {
+  @media (max-width: 375px) {
+    .copyright .copyright-content .cop span {
+      display: block; } }
+  .copyright .copyright-content .cop span a {
     text-decoration: none;
     font-size: 12px;
     color: #898989;
     -webkit-transition: .5s;
     transition: .5s; }
-    .copyright .copyright-content .cop a img {
-      margin-right: 6px; }
+    .copyright .copyright-content .cop span a img {
+      margin-left: 6px; }
   @media (max-width: 991px) {
     .copyright .copyright-content .payment {
       -webkit-box-ordinal-group: 2;
