@@ -398,7 +398,9 @@ body {
           font-family: "frtBold",sans-serif;
           margin-left: 10px;
           -webkit-transition: all .5s;
-          transition: all .5s; }
+          transition: all .5s; 
+          margin-right: auto;
+        }
           @media (max-width: 991px) {
             .nav-link .nav-container .main-ul .drop > span {
               color: #595959;
